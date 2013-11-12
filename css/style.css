@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'junction_regularregular';
+    font-family: 'junction_regular';
     src: url('../fonts/Junction-webfont.eot');
     src: url('../fonts/Junction-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/Junction-webfont.woff') format('woff'),
          url('../fonts/Junction-webfont.ttf') format('truetype'),
-         url('../fonts/Junction-webfont.svg#junction_regularregular') format('svg');
+         url('../fonts/Junction-webfont.svg#junction_regular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -14,6 +14,15 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: Georgia, Garamond, Times, serif;
+}
+
+p {
+	margin-top: 0;
+}
+
+form {
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 /*Select all elements whose class attribute includes "contain"*/
@@ -28,7 +37,8 @@ body {
 }
 
 /* CLear fixes*/
-#content-wrapper:after {
+#content-wrapper:after,
+#body-footer .contain:after {
 	content: "";
 	display: table;
 	clear: both;
@@ -57,6 +67,7 @@ body {
 	border-top: solid 1px #cfcfcf;
 	border-bottom: solid 1px #cfcfcf;
 	color: #cfcfcf;
+	height: 37px;
 }
 
 #primary-nav a:link,
@@ -65,7 +76,7 @@ body {
 	text-decoration: none;
 	text-transform: uppercase;
 	margin-right: 33px; /* when you want to seperate two elements you use MARGIN*/
-	font: normal 18px/37px 'junction_regularregular';
+	font: normal 18px/40px 'junction_regular';
 	display: inline-block;
 
 }
@@ -93,7 +104,82 @@ body {
 	float: right;
 }
 
-
-footer {
-	-moz
+#sidebar a {
+	display: block;
+	font-family: Georgia, serif; 
+	font-style: italic;
+	font-size: 87.5%;
+	color: #4c4c4c;
+	text-decoration: none;
+	margin-bottom: 18px;
+	position: relative;
 }
+
+#sidebar a:hover:before {
+	content: "\00BB";
+	margin-right: 5px;
+	position: absolute;
+	left: -10px;
+}
+
+#sidebar p {
+	font: 'junction_regular'
+}
+
+.columned {
+	text-align: justify;
+	-webkit-column-count:2;
+	-moz-column-count:2;
+	-ms-column-count:2;
+	-o-column-count:2;
+	column-count:2;
+
+	-webkit-column-gap: 56px;
+	-moz-column-gap: 56px;
+	-ms-column-gap: 56px;
+	-o-column-gap: 56px;
+	column-gap: 56px;
+}
+
+
+#body-footer {
+	background: linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,0) 6px), url("../images/footer-bg.png");
+	border-top: solid 1px #cfcfcf;
+	padding: 36px 0;
+}
+
+#body-footer p {
+	width: 220px;
+	margin: 0 20px 0 0;
+	float: left;
+}
+
+#body-footer p:last-of-type {
+	margin-right: 0;
+}
+
+#body-footer p:last-of-type img {
+	width: 100%;
+	opacity: .17;
+}
+
+#body-footer a {
+	display: block;
+	font-family: Georgia, serif; 
+	font-style: italic;
+	font-size: 87.5%;
+	color: #4c4c4c;
+	text-decoration: none;
+	margin-bottom: 18px;
+	position: relative;
+}
+
+#body-footer a:hover:before {
+	content: "\00BB";
+	margin-right: 5px;
+	position: absolute;
+	left: -13px;
+}
+
+
+
