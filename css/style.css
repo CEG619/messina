@@ -16,13 +16,12 @@ body {
 	font-family: Georgia, Garamond, Times, serif;
 }
 
-p {
+h1, h2, h3, h4, h5, p {
 	margin-top: 0;
 }
 
-form {
-	margin-top: 40px;
-	margin-bottom: 40px;
+a {
+	text-decoration: none;
 }
 
 /*Select all elements whose class attribute includes "contain"*/
@@ -38,7 +37,8 @@ form {
 
 /* CLear fixes*/
 #content-wrapper:after,
-#body-footer .contain:after {
+#body-footer .contain:after,
+#product-list:after {
 	content: "";
 	display: table;
 	clear: both;
@@ -91,6 +91,9 @@ form {
 	margin-top: -3px;
 }
 
+#content-wrapper {
+	margin-top: 40px;
+}
 
 #content {
 	width: 700px;
@@ -104,30 +107,13 @@ form {
 	float: right;
 }
 
-#sidebar a {
-	display: block;
-	font-family: Georgia, serif; 
-	font-style: italic;
-	font-size: 87.5%;
-	color: #4c4c4c;
-	text-decoration: none;
-	margin-bottom: 18px;
-	position: relative;
-}
-
-#sidebar a:hover:before {
-	content: "\00BB";
-	margin-right: 5px;
-	position: absolute;
-	left: -10px;
-}
-
 #sidebar p {
 	font: 'junction_regular'
 }
 
 .columned {
 	text-align: justify;
+	padding-right: 40px;
 	-webkit-column-count:2;
 	-moz-column-count:2;
 	-ms-column-count:2;
@@ -146,6 +132,7 @@ form {
 	background: linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,0) 6px), url("../images/footer-bg.png");
 	border-top: solid 1px #cfcfcf;
 	padding: 36px 0;
+	margin-top: 25px;
 }
 
 #body-footer p {
@@ -163,7 +150,11 @@ form {
 	opacity: .17;
 }
 
-#body-footer a {
+#sidebar p:first-of-type {
+	border-bottom: solid 1px #2f2e46;
+}
+
+.secondary-nav a {
 	display: block;
 	font-family: Georgia, serif; 
 	font-style: italic;
@@ -174,12 +165,149 @@ form {
 	position: relative;
 }
 
-#body-footer a:hover:before {
+.secondary-nav a:hover:before {
 	content: "\00BB";
 	margin-right: 5px;
 	position: absolute;
 	left: -13px;
+	top: -1px;
 }
 
+#sidebar .secondary-nav a {
+	font-size: 100%;
+	color: rgb(170, 169, 186);
+}
 
+.sidebar-title {
+	border-bottom: 1px solid;
+}
 
+#search input, button {
+	margin-bottom: 22px;
+	border: 1px solid #d8e3e8;
+	background-color: #ffffff;
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			-o-box-sizing: border-box;
+	height: 26px;
+	text-decoration: none;
+}
+
+#search input {
+	width: 154px;
+	padding: 0px;
+	font-size: 16px;
+}
+
+#search button {
+	font-family: 'junction_regular';
+	margin: 5px;
+	margin-top: 0px;
+	font-size: 12px;
+	padding: 0px;
+}
+
+/* PRODUCT LIST */
+
+#product-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#product-list li {
+	float: left;
+	width: 220px;
+	height: 220px;
+	margin: 0 20px 20px 0;
+	background-color: rgba (0,0,0,.4);
+	display: inline-block;
+	position: relative;
+}
+
+#product-list li:nth-of-type(3n) {
+	margin-right: 0;
+}
+
+#product-list h2, 
+#product-list p, 
+#product-list span {
+	position: absolute;
+	font-family: 'junction_regular';
+	text-align: center;
+	z-index: 2;
+}
+
+#product-list h2,
+#product-list p {
+	width: 100%;
+	font-size: 100%;
+	font-family: 'junction_regular';
+	color: #f4f4f4;
+	text-align: center;
+}
+
+#product-list h2 {
+	position: absolute; top: 11px;
+}
+
+#product-list p {
+	font-size: 87.5%;
+	position: absolute; bottom: 10px;
+}
+
+#product-list span {
+	position: absolute;
+	bottom: 52px;
+	width: 98px;
+	left: 50%;
+	border-top: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	border-right: 1px solid #616161;
+	border-bottom: 1px solid #616161;
+	color: #565656;
+	text-align: center;
+	font-size: 75%;
+	font-family: 'junction_regular';
+	background-color: #ffffff;
+	text-transform: uppercase;
+	margin-left: -50px;
+	line-height: 26px;
+	-moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.28);
+	-webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.28);
+	-ms-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.28);
+	-o-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.28);
+	box-shadow: 2px 2px 5px 1px rgba(0,0,0,.28);
+}
+
+#product-list a {
+	visibility: hidden;
+}
+
+#product-list li:hover>a {
+	visibility: visible;
+}
+
+#product-list img {
+	visibility: visible;
+	position: relative;
+}
+
+#product-list li {
+	position: relative;
+}
+
+#product-list li:hover:after {
+	content: "";
+	width: 220px;
+	height: 220px;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	background-image: -webkit-radial-gradient(110px 110px, circle closest-side, rgba(0,0,0,.08) 0%, rgba(0,0,0,.36) 100%);
+	background-image: -moz-radial-gradient(110px 110px, circle closest-side, rgba(0,0,0,.08) 0%, rgba(0,0,0,.36) 100%);
+	background-image: -ms-radial-gradient(110px 110px, circle closest-side, rgba(0,0,0,.08) 0%, rgba(0,0,0,.36) 100%);
+	background-image: -o-radial-gradient(110px 110px, circle closest-side, rgba(0,0,0,.08) 0%, rgba(0,0,0,.36) 100%);
+	background-color: rgba(0,0,0,.36);
+	pointer-events: none;
+}
